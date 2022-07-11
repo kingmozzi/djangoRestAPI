@@ -23,11 +23,13 @@ from practice import views
 #app_name = 'practice'
 
 router = routers.DefaultRouter()
-router.register('practices', views.PracticeViewSet)
+#router.register('practices', views.PracticeViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    #path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    #path('api/doc', get_swagger_view(title='Rest API Document')),
-    #path('api/v1/', include((router.urls, 'practice'), namespace='api')),
+    path('practices/', views.practice_list),
+    path('practice/<int:id>/', views.practice),
+    path('login/', views.login),
+    #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

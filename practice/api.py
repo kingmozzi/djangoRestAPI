@@ -5,4 +5,4 @@ class PracticeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Practice
-        fields = ['name', 'uid', 'age']
+        fields = ['id', 'name', 'uid', 'age']
